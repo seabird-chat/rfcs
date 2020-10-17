@@ -16,10 +16,10 @@ to less robust code.
 - Remove custom internal message queue
 - Replace as much logic as possible with queue routing
 
-## Unsolved Problems
+## Potential Problems
 
 - This loses information about the current streams, such as channels,
-  and backend info.
+  and backend info. This may be acceptable for now and is related to the API refactor in [SB-3](./SB-3.md)
 
 ## Details
 
