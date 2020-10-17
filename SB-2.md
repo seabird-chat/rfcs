@@ -15,9 +15,11 @@ server-to-server communication, it still falls short for web applications.
 
 ## Dependencies
 
-- SB-1 (AMQP Backed Implementation) - SB-2 can be completed
-  without SB-1, but it would be much easier to do this after there's a simpler
-  implementation.
+- [SB-1 (AMQP Backed Implementation)](./SB-1.md) - SB-2 can be completed
+  without [SB-1](./SB-1.md), but it would be much easier to do this after
+  there's a simpler implementation.
+- [SB-3 (API Refactor)](./SB-3.md) - this refactor would allow us to only
+  support server streams and would simplify this implementation more.
 
 ## Goals
 
@@ -26,9 +28,12 @@ server-to-server communication, it still falls short for web applications.
   plugin.
 - Continue to be backwards compatible
 
-## Unsolved Problems
+## Potential Problems
 
 - How to best handle bidirectional streaming/chat ingest
+  - The current plan is to use HTTP/1.1 Chunked Encoding (or another similar
+    technology) once the API only requires server streaming and not ingestion
+    streaming.
 
 ## Details
 
