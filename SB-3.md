@@ -131,6 +131,8 @@ Moving callbacks to separate endpoints rather than in an event stream allows
 us to scale out handling of events if necessary. Multiple seabird-core hosts
 could be handling event ingestion rather than it being limited to one.
 
+#### Separate Endpoints
+
 This portion of the proposal would add additional endpoints to ChatIngest as
 follows, to act as a replacement for incoming `ChatEvents`:
 
@@ -153,6 +155,18 @@ rpc ChangeChannelCallback(ChangeChannelEvent)
 At this point the `ChatEvent` type would no longer be necessary, other than
 `HelloChatEvent`, which is replaced by modifying the stream endpoint in the
 next section.
+
+
+#### Single Endpoint
+
+Alternatively, we could keep `ChatEvent`, remove `HelloChatEvent` from the
+`oneof`, and add the following endpoint:
+
+```
+rpc EventCallback(repeated ChatEvent)
+```
+
+This would additionally allow for submitting multiple events at once.
 
 ### Simplify Streaming to Only Server-Side
 
