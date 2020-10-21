@@ -85,8 +85,14 @@ on the frontend)
 additional ingestion endpoints as it would only be usable for events streaming
 from the server).
 - HTTP SSE (with newline delimited json events)
+- HTTP body streaming (with newline delimited json events)
 
 See https://github.com/twitchtv/twirp/issues/3
+
+Websockets and HTTP/2 are the cleanest way to get messages, though newline
+delimited JSON would also work. Additionally websockets have fairly good browser
+support. It gets more complicated for binary formats because you need to invent
+a new container format.
 
 #### Event Stream
 
