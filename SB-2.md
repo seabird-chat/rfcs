@@ -84,6 +84,7 @@ on the frontend)
 - HTTP/1.1 chunked encoding (though this would require having
 additional ingestion endpoints as it would only be usable for events streaming
 from the server).
+- HTTP SSE (with newline delimited json events)
 
 See https://github.com/twitchtv/twirp/issues/3
 
