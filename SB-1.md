@@ -1,6 +1,6 @@
 # SB-1 (AMQP Backed Implementation)
 
-**Status**: Under Review
+**Status**: On Hold
 
 This proposal introduces a method of using a message queue (Anything implementing
 AMQP 0.9.1, focusing on RabbitMQ) rather than the internal, custom queue.
